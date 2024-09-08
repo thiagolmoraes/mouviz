@@ -1,0 +1,105 @@
+### Hello Test
+GET http://localhost:8000/ HTTP/1.1
+
+### Registro de Usuário
+POST http://localhost:8000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "teste@teste.com",
+  "password": "password123",
+  "name": "Thiago"
+}
+
+### Login de Usuário
+POST http://localhost:8000/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "teste@teste.com",
+  "password": "123"
+}
+
+
+### Movie Routess themoviedb 
+###  Buscar Filmes por Título
+GET http://localhost:8000/movies/search/Avengers HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU3NDMyMjgsImV4cCI6MTcyNTc0NjgyOH0.1se4eQefNstios14w442oRMUmH_9ud-E3BqejK-1mZ0
+
+###  Buscar Detalhes do Filme
+GET http://localhost:8000/movies/14609/details HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU3NTAxMjUsImV4cCI6MTcyNTc1MzcyNX0.DguPWD9RedQOw_GlwGBOXz_M6Hct2F3eCrJxSeugvbw
+
+
+
+### Adicionar Filme aos Favoritos (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+POST http://localhost:8000/movies/add HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU3NDMyMjgsImV4cCI6MTcyNTc0NjgyOH0.1se4eQefNstios14w442oRMUmH_9ud-E3BqejK-1mZ0
+
+{
+  "movieId": 14611,
+  "title": "Ultimate Avengers 2",
+  "label": "Assistido"
+  
+}
+
+### Listar Filmes Favoritos do Usuário (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+GET http://localhost:8000/movies/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU3NjIxMzEsImV4cCI6MTcyNTc2NTczMX0.KcfuexftYGoafkKAwWq6YEWuKU-f0biBl6DQpBV_HF0
+
+### Listar um filme especifico do usuário (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+GET http://localhost:8000/movies/85481/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU4MTc3OTUsImV4cCI6MTcyNTgyMTM5NX0.CUH0qe97r50EcBGU8f1znfgNAgyvLvSKm0WV2se8N2E
+
+
+
+### Dar Like em um filme (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+POST http://localhost:8000/movies/14611/liked HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJh2bGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0aGlhZ29AY29tcGFueS5jb20iLCJpYXQiOjE3MjU3Mzk4ODMsImV4cCI6MTcyNTc0MzQ4M30.SCSdQvAlE6afOcYyHFphJb0vyjXHczeUpQ4B1HsKR5g
+
+{
+  "like": true
+}
+
+### Favoritar um filme (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+POST http://localhost:8000/movies/14611/favorite HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhb2GciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0aGlhZ29AY29tcGFueS5jb20iLCJpYXQiOjE3MjU3Mzk4ODMsImV4cCI6MTcyNTc0MzQ4M30.SCSdQvAlE6afOcYyHFphJb0vyjXHczeUpQ4B1HsKR5g
+
+{
+  "favorite": true
+}
+
+
+### Atualizar Rotulos do Filme //Assistindo/ (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+POST http://localhost:8000/movies/1461122/label HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0aGlhZ29AY29tcGFueS5jb20iLCJpYXQiOjE3MjU3NTg3MDYsImV4cCI6MTcyNTc2MjMwNn0.t1nDwU7gaTtiUqJwS3LfduW9iIBr3sn9qUztHIU_H4Q
+
+{
+  "label": "Assistido"
+}
+
+
+### Atualizar Nota do Filme (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+POST http://localhost:8000/movies/9320/rating HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhb2GciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0aGlhZ29AY29tcGFueS5jb20iLCJpYXQiOjE3MjU3Mzk4ODMsImV4cCI6MTcyNTc0MzQ4M30.SCSdQvAlE6afOcYyHFphJb0vyjXHczeUpQ4B1HsKR5g
+
+{
+  "rating": 10
+}
+
+### Remover Filme do Usuário (Autenticado)
+# Substitua <TOKEN> com o token JWT retornado na resposta de login
+DELETE http://localhost:8000/movies/85481/delete HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU4MTc3OTUsImV4cCI6MTcyNTgyMTM5NX0.CUH0qe97r50EcBGU8f1znfgNAgyvLvSKm0WV2se8N2E

@@ -1,0 +1,87 @@
+   .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+.header-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.header-title:hover {
+    cursor: pointer;
+    transition: color 0.3s ease;    
+}
+
+.header-right {
+    position: relative;
+}
+
+.user-name {
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+   .header-nav {
+    position: absolute;
+    top: 110%;
+    text-align: center;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    min-width: 90px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.header-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-nav li:last-child {
+    border-bottom: none;
+}
+
+.header-nav a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.header-nav a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
