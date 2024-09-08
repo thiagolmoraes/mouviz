@@ -10,20 +10,20 @@ Além disso, o usuário pode marcar seus filmes em listas de categorias como: "N
 ## Como Executar
 
 1. Clone o repositório:
-   ```bash
+```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
-  ```	
+```	
 
   Instale o Docker (se ainda não estiver instalado):
     Siga essas instruções da documentação oficial do Docker: https://docs.docker.com/get-docker/
-    j
+
  2. Navegue até o diretório e procure o arquivo .env e adicione sua chave de API da API do The Movie DB:
   Instruções para obter uma chave de API da API do The Movie DB: https://developer.themoviedb.org/reference/intro/authentication
 
-    ```bash
+```bash
       cd mouvi/backend
       API_KEY="sua-api-key"
-    ```
+```
 Suba a aplicação com Docker Compose: Certifique-se de que o arquivo docker-compose.yml esteja configurado corretamente. Então, execute:
 
 ```bash
