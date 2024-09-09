@@ -7,8 +7,7 @@ A aplicação web Mouvi permite ao usuário pesquisar títulos de filmes utiliza
 Além disso, o usuário pode marcar seus filmes em listas de categorias como: "Não Assistindo", "Pretende Assistir", "Assistido", assim como dar notas, favoritar e dar likes para seus filmes.
 
 
-[![Watch the video](https://streamable.com/e/5hk8tu?)][https://streamable.com/e/5hk8tu?]
-
+[![Watch the video](https://streamable.com/e/5hk8tu?)]
 
 ## Como Executar
 
