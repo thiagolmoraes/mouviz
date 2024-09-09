@@ -26,18 +26,22 @@ Além disso, o usuário pode marcar seus filmes em listas de categorias como: "N
       cd mouvi/backend
       API_KEY="sua-api-key"
 ```
-Suba a aplicação com Docker Compose: Certifique-se de que o arquivo docker-compose.yml esteja configurado corretamente. Então, execute:
+  3. Suba a aplicação com Docker Compose: Certifique-se de que o arquivo docker-compose.yml esteja configurado corretamente. Então, execute:
 
 ```bash
 docker-compose up -d
 ```
-Acesse a aplicação: Após o Docker Compose terminar de construir e iniciar os containers, você pode acessar a aplicação em http://localhost:3000 (ou a porta configurada).
+  4. Acesse a aplicação: Após o Docker Compose terminar de construir e iniciar os containers, você pode acessar a aplicação em http://localhost:3000 (ou a porta configurada).
 
 Parar a aplicação: Para parar os containers e liberar os recursos, execute:
 
 ```bash
 docker-compose down
 ```
+
+## Endpoints da API
+
+Caso queira testar os endpoints da API, pode utilizar o Insomnia ou Postman. Você também pode usar o arquivo chamado .http junto com a extensão do VSCode chamada [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
 ## Contribuições
 Sinta-se à vontade para contribuir com o projeto! Envie pull requests, abra issues ou entre em contato para discutir melhorias.
