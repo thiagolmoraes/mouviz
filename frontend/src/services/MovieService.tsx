@@ -55,6 +55,12 @@ export interface UserListMovie {
   label: string;
 }
 
+export interface MovieListStatus {
+  liked: boolean | null;
+  isFavorite: boolean;
+  label: string
+}
+
 export interface MovieStatus {
   rating: number | null;
   isFavorite: boolean;
@@ -63,6 +69,18 @@ export interface MovieStatus {
 }
 
 class MovieService {
+  getUserStats() {
+    throw new Error('Method not implemented.');
+  }
+
+  async getMovieListStatus(): Promise<MovieListStatus[]> {
+    const response = await api.get<MovieListStatus[]>('/user');
+    return response.data.map(item => ({
+      liked: item.liked,
+      isFavorite: item.isFavorite,
+      label: item.label,
+    }));
+  }
 
   async getCardInformation(movieId: number): Promise<MovieCard> {
     try {
@@ -82,6 +100,7 @@ class MovieService {
     }
   }
 
+  
   async getMovieUserList(): Promise<UserListMovie[]> {
     const response = await api.get<UserListMovie[]>('/user');
     return response.data;

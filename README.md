@@ -7,6 +7,9 @@ A aplicação web Mouvi permite ao usuário pesquisar títulos de filmes utiliza
 Além disso, o usuário pode marcar seus filmes em listas de categorias como: "Não Assistindo", "Pretende Assistir", "Assistido", assim como dar notas, favoritar e dar likes para seus filmes.
 
 
+[![Watch the video](https://streamable.com/e/5hk8tu?)][https://streamable.com/e/5hk8tu?]
+
+
 ## Como Executar
 
 1. Clone o repositório:
@@ -36,6 +39,7 @@ Parar a aplicação: Para parar os containers e liberar os recursos, execute:
 ```bash
 docker-compose down
 ```
+
 ## Contribuições
 Sinta-se à vontade para contribuir com o projeto! Envie pull requests, abra issues ou entre em contato para discutir melhorias.
 

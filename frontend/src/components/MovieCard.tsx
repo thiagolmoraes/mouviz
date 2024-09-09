@@ -11,10 +11,9 @@ interface MovieCardProps {
     release_date: string;
     isFavorite: boolean;
   };
-  onClose: () => void;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie, onClose }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   const handleClick = () => {
@@ -23,19 +22,18 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie, onClose }) => {
 
   const handleCloseDetails = () => {
     setIsDetailsOpen(false);
-    onClose();
   };
 
   return (
     <div className="card-container">
       <div className="movie-card" onClick={handleClick}>
-      <div className="movie-poster">
-        {movie.poster_path ? (
-          <img src={movie.poster_path} alt={movie.title} className="movie-poster" />
-        ) : (
-          <div className="no-poster">No poster available</div>
-        )}
-      </div>
+        <div className="movie-poster">
+          {movie.poster_path ? (
+            <img src={movie.poster_path} alt={movie.title} className="movie-poster" />
+          ) : (
+            <div className="no-poster">No poster available</div>
+          )}
+        </div>
         <div className="movie-info">
           <div className="movie-title" title={movie.title}>{movie.title}</div>
           

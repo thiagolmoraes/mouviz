@@ -23,7 +23,7 @@ function AuthForm({ isLogin = true }) {
         }
         const response = await AuthService.login(email, password);
         if (!response || !response.name || !response.token || !response.email) {
-          toast.error('Falha no login');
+          toast.error('Falha no login, Tente novamente novamente.');
           return;
         }
         toast.success('Login realizado com sucesso!');
@@ -39,9 +39,9 @@ function AuthForm({ isLogin = true }) {
       }
     } catch (error) {
       if (error instanceof Error) {
-        toast.error(isLogin ? `Falha no login` : `Falha no registro. Por favor, verifique suas informações.`);
+        toast.error(isLogin ? `Falha no login, Tente novamente novamente.` : `Falha no registro. Por favor, verifique suas informações.`);
       } else {
-        toast.error(isLogin ? 'Falha no login. Por favor, verifique suas credenciais.' : 'Falha no registro. Por favor, verifique suas informações.');
+        toast.error(isLogin ? 'Falha no login, Tente novamente novamente.. Por favor, verifique suas credenciais.' : 'Falha no registro. Por favor, verifique suas informações.');
       }
     }
   };

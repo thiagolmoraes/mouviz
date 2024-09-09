@@ -4,6 +4,26 @@
   margin: 0 auto;
 }
 
+.user-stats {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-stats span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-stats span:not(:last-child) {
+  margin-right: 20px;
+}
+
 .add-movie-btn {
   background-color: #4CAF50;
   border: none;

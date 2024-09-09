@@ -45,10 +45,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiO
   
 }
 
-### Listar Filmes Favoritos do Usuário (Autenticado)
+### Listar Filmes do Usuário (Autenticado)
 # Substitua <TOKEN> com o token JWT retornado na resposta de login
 GET http://localhost:8000/movies/user HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU3NjIxMzEsImV4cCI6MTcyNTc2NTczMX0.KcfuexftYGoafkKAwWq6YEWuKU-f0biBl6DQpBV_HF0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0ZUB0ZXN0ZS5jb20iLCJpYXQiOjE3MjU4MzAyMTYsImV4cCI6MTcyNTgzMzgxNn0.4wwcOMFRhfU3OPmYuchRYL9wwB5vsE2zxz563aEVtME
 
 ### Listar um filme especifico do usuário (Autenticado)
 # Substitua <TOKEN> com o token JWT retornado na resposta de login
